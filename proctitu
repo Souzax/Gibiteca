@@ -1,0 +1,41 @@
+void proctitu(){
+	
+	//Está função procurar por titulos parecidos com a palavra que o usuário digita, se achar, imprime todos os gibis
+	//cadastrados com o mesmo titulo. Pra isso uso a função strcmp pra comparar as strings que o usuário digita com
+	//as strings já cadastradas no posição "titulo" da struct. Caso não ache nada, a variavel "a" vai continuar em 0
+	//e vai indicar pro programa que não tem nada cadastrado com o mesmo titulo.
+	//OBS: por segurança, ela reler e realoca todos os cadastros na struct desde a posição 1.
+	char pesquisa[100];
+	int pos=0, a=0;
+	char opc;
+	FILE*dados;
+	dados=fopen("dados.txt", "r");
+			system("cls");
+			printf("======GIBITECA=======\n==Leitura de Registros por titulo==\n");
+			printf("Digite o titulo de um gibi: ");
+			fflush(stdin);
+			fgets(pesquisa,100, stdin);
+			printf("==GIBIS CADASTRADOS COM O MESMO TITULO==\n");
+			if(ba>0){
+			i=1;
+			while(!feof(dados)){
+			fgets(&cad[i].titulo, "n", dados);
+			fgets(&cad[i].editora, "n", dados);
+			fscanf(dados, "%d", &cad[i].num);
+			i++;
+			};
+			for(int i=1; i<100; i++){
+				pos=strcmp(pesquisa, cad[i].titulo);
+				if(pos==0){
+					printf("\n\nTitulo: %sEditora: %sNumero: %d", cad[i].titulo, cad[i].editora, cad[i].num);
+					printf("\n");
+					a++;}
+				}
+				}else if(a==0){
+					printf("NENHUM GIBI ENCONTRADO");
+					printf("\n");
+					
+				}
+			system("pause");
+	
+}

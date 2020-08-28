@@ -1,0 +1,32 @@
+void apagar(){
+	
+	//Está função deleta os gibis que o usuario indica. Primeiro pede pro usuário a posição do gibi que ele quer deletar
+	//depois comparar a posição que o usuário indicou com "b" que no caso aqui é o indicador da posição da struct
+	//caso o "b" seja diferente da posição da struct, o programa pode reescrever os dados dessa posição no arquivo.txt,
+	//caso seja igual, ou seja, a posição que o usuario indicou que quer deletar, ele não reescreve, logo e apagada do arquivo!
+	
+	FILE*band;
+	band=fopen("bandeira.txt", "w");
+			
+	FILE*dados;
+	dados=fopen("dados.txt", "w");
+	
+	int a;
+	printf("======GIBITECA=======\n==Aba de exclusao==\n");
+	printf("Qual a posicao do GIBI que voce deseja apagar? ");
+	scanf("%d", &a);
+	for(int b=1; b<i; b++){
+		if(a!=b){
+		fputs(cad[b].titulo, dados);
+		fputs(cad[b].editora, dados);
+		fprintf(dados, "%d", cad[b].num);	
+	}	
+}
+printf("GIBI %d apagado com sucesso!", a);
+ba--;
+fprintf(band, "%d", ba);
+fclose(band);
+fclose(dados);
+printf("\n");
+system("pause");
+}	

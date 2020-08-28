@@ -1,0 +1,29 @@
+void listar(){
+	
+	//Está função imprime todos os gibis cadastrados. Primeiro por motivo de segurança, ela ler de novo todos os dados
+	//do arquivo.txt e vai armazenando na struct a partir da posição 1, depois ler posição por posição e imprime todos os
+	//dados da struct até o "i" que é o parametro, pois é o número de gibis que até então foram cadastrados.
+	//logo se o "i" estiver igual a 2, significa que ainda não tem nada cadastrado.
+	
+	FILE*dados;
+	dados=fopen("dados.txt", "r");
+	if(ba>0){
+		i=1;
+	while(!feof(dados)){
+			fgets(&cad[i].titulo, "n", dados);
+			fgets(&cad[i].editora, "n", dados);
+			fscanf(dados, "%d", &cad[i].num);
+			i++;
+			};	
+	for(int b=1; b<i; b++){
+		printf("\n\nGibi na posicao: %d", b);
+		printf("\nTitulo: %sEditora: %sNumero: %d", cad[b].titulo, cad[b].editora, cad[b].num);
+		}	
+		printf("\n");
+		system("pause");
+	}else{
+		printf("NAO TEM GIBIS CADASTRADOS!");
+		printf("\n");
+		system("pause");
+	}
+}

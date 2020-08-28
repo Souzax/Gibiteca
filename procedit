@@ -1,0 +1,39 @@
+void procedit(){
+	
+	//Está função procura por editoras parecidas com a palavra que o usuário digita. Ela é patricamente idêntica a de
+	//procurar por titulo, unica coisa que muda é que ela compara com as strings já cadastradas na posição "editora da struct. 
+	
+	char pesquisa[100];
+	int pos=0, a=0;
+	char opc;
+	FILE*dados;
+	dados=fopen("dados.txt", "r");
+			system("cls");
+			printf("======GIBITECA=======\n==Leitura de Registros por editora==\n");
+			printf("Digite a editora de um gibi: ");
+			fflush(stdin);
+			fgets(pesquisa,100, stdin);
+			printf("==GIBIS CADASTRADOS COM A MESMA EDITORA==\n");
+			if(ba>0){
+			i=1;
+			while(!feof(dados)){
+			fgets(&cad[i].titulo, "n", dados);
+			fgets(&cad[i].editora, "n", dados);
+			fscanf(dados, "%d", &cad[i].num);
+			i++;
+			};
+			for(int i=1; i<100; i++){
+				pos=strcmp(pesquisa, cad[i].editora);
+				if(pos==0){
+					printf("\nTitulo: %sEditora: %sNumero: %d", cad[i].titulo, cad[i].editora, cad[i].num);
+					printf("\n");
+					a++;
+		}
+		}
+			 }else if(a==0){
+					printf("NENHUM GIBI ENCONTRADO");
+					printf("\n");
+				
+				}
+			system("pause");
+		}

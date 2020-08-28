@@ -1,0 +1,52 @@
+void cadastro(){
+	
+	//Está função cadastra os novos gibis e hqs na struct e atutomaticamente já vai salvando no arquivo.txt.
+	//Caso no incio o programa já tenha pego algum gibi cadastrado do arquivo.txt, a função não vai sobrepor os cadastrados,
+	//pois o parametro de contagem da struck é "i", e caso o programa já tenho pego algum dado do arquivo, os cadastros
+	//vão ser feitos nas posições seguinte, pois tem um incrementador em "i" no inicio do programa que roda toda vez que ele
+	//recupera um dado do arquivo!
+	
+			int b=1;
+			do{
+				
+			FILE*band;
+			band=fopen("bandeira.txt", "w");
+			
+			FILE*dados;
+			dados=fopen("dados.txt", "a");
+			
+				system("cls");
+				printf("======GIBITECA=======\n==Aba de cadastramento==\n");
+				printf("Digite o titulo do gibi: ");
+				fflush(stdin);
+				fgets(cad[i].titulo,100, stdin);
+				fputs(cad[i].titulo, dados);
+				printf("Digite a editora do gibi: ");
+				gets(cad[i].editora);
+				fputs(cad[i].editora, dados);
+				printf("Digite o numero do gibi: ");
+				scanf("%d", &cad[i].num);
+				fprintf(dados, "\n%d", cad[i].num);
+				printf("Gibi cadastrado com sucesso!\n");
+				ba++;
+				fprintf(band, "%d", ba);
+				do{
+				printf("Deseja cadastrar um novo gibi?\n1 - SIM\n2 - NAO\n");
+				scanf("%d", &b);
+				switch(b){
+					case 1:
+						b=1;
+						break;
+					case 2:
+						b=0;
+						break;
+						default:
+							printf("Opcao nao encontrada!");
+							system("pause");
+							};
+							i++;
+							fclose(band);
+							fclose (dados);
+						}while(b>1);
+			}while(b!=0);
+}
